@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kauã | Java Backend</title>
+<meta name="description" content="Estudante de Ciência da Computação e estagiário na Meep, construindo carreira em Engenharia de Software com Java Backend.">
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Geist+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#2c3b4d;--navy:#1b2632;--tan:#e6d5c1;--cream:#fcfaf7;--accent:#c4562b;--mute:#5d6b7a}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);background:#fff;font-family:"Geist Mono",ui-monospace,monospace;line-height:1.6}
+a{color:var(--accent);text-decoration:underline;text-decoration-color:var(--tan);text-underline-offset:4px}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+nav{padding:20px;font:700 1.3rem Onest;color:var(--navy);letter-spacing:-.02em}
+nav small{font-weight:400;color:var(--mute);font-family:"Geist Mono"}
+section{text-align:center;margin-bottom:84px;scroll-margin-top:20px}
+h2{font-size:1.5rem;margin:0;color:var(--navy)}
+.lead{color:var(--mute);margin:6px 0 28px;font-size:.9rem}
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;min-height:80vh}
+.photo{aspect-ratio:4/5;max-width:300px;margin:auto;border-radius:24px;background:linear-gradient(160deg,var(--navy),#34465a);display:grid;place-content:center;color:var(--tan);font:700 5rem Onest;box-shadow:0 14px 30px rgba(27,38,50,.25)}
+.hero h1{font-size:1.6rem;color:var(--navy);margin:14px 0 2px}
+.hl{color:var(--accent)}
+.card{display:block;text-decoration:none;color:#fff;background:var(--navy);border-radius:20px;padding:26px;text-align:left;margin:22px 0 10px;box-shadow:0 10px 24px rgba(27,38,50,.25)}
+.card b{font:700 1.5rem Onest;display:block}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;text-align:left}
+.box{border:1px solid var(--tan);border-radius:16px;padding:18px;background:var(--cream)}
+.box h3{margin:0 0 6px;font:600 1rem Onest;color:var(--navy)}
+.box p{margin:0;font-size:.82rem;color:var(--mute)}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.tags span{font-size:.7rem;background:#fff;border:1px solid var(--tan);border-radius:999px;padding:2px 10px}
+.rm{height:78vh;min-height:520px;border-radius:16px;overflow:hidden;box-shadow:0 8px 24px rgba(27,38,50,.15);border:1px solid rgba(230,213,193,.7);position:relative}
+.rm iframe{width:100%;height:100%;border:0}
+.rm a{position:absolute;top:12px;right:12px;width:40px;height:40px;border-radius:50%;background:#fffe;display:grid;place-content:center;box-shadow:0 2px 8px #0003;text-decoration:none;color:var(--navy)}
+.exp{text-align:left;max-width:720px;margin:0 auto}
+.exp h3{font:700 1.2rem Onest;margin:0;color:var(--navy)}
+.exp .d{font-size:.75rem;color:var(--mute);letter-spacing:.08em}
+.exp ul{list-style:none;padding:0;margin:10px 0 0}
+.exp li{padding-left:18px;position:relative;margin:6px 0;font-size:.88rem}
+.exp li::before{content:"▸";position:absolute;left:0;color:var(--accent)}
+.about{max-width:620px;margin:0 auto;text-align:left;font-size:.92rem}
+footer{text-align:center;padding:30px 20px 50px;color:var(--mute);font-size:.8rem;border-top:1px solid var(--tan)}
+@media(max-width:760px){.hero{grid-template-columns:1fr;min-height:0;padding-top:10px}}
+</style>
+</head>
+<body>
+<nav>Kauã Reis<small> / java backend</small></nav>
+<div class="wrap">
+
+<section class="hero" id="top">
+  <div>
+    <img class="photo" src="foto.jpg" alt="Foto de Kauã Antônio Reis" style="object-fit:cover;width:100%">
+    <p style="margin:18px 0 0;font-size:.8rem">Oi! Eu sou o(a)</p>
+    <h1>Kauã Reis :)</h1>
+    <p style="margin:0;font-size:.8rem;color:var(--mute)">estudante de Ciência da Computação 🎓</p>
+  </div>
+  <div>
+    <p>Hoje trabalho como <span class="hl">estagiário na Meep</span>.</p>
+    <p>Estou construindo minha carreira para me tornar <span class="hl">Engenheiro de Software</span>, com foco em <span class="hl">Java Backend</span>,<br>documentando essa jornada aqui:</p>
+    <a class="card" href="#roadmap"><b>Meu roadmap de 24 semanas</b>Java · LeetCode · Arquitetura · Inglês →</a>
+    <p style="font-size:.85rem">E também no <a href="https://github.com/kauaazn">GitHub</a> e <a href="https://www.linkedin.com/in/kau%C3%A3-reis-06b99137b/">LinkedIn</a></p>
+  </div>
+</section>
+
+<section id="roadmap">
+  <h2>Meu roadmap de estudos</h2>
+  <p class="lead">Tudo o que estou estudando pra me tornar Engenheiro de Software com Java Backend.</p>
+  <div class="rm"><iframe src="roadmap.html" title="Roadmap Java Backend" loading="lazy"></iframe><a href="roadmap.html" title="Abrir em tela cheia">⛶</a></div>
+</section>
+
+<section id="como-estudo">
+  <h2>Como estou estudando</h2><p class="lead">O sistema que uso toda semana.</p>
+  <div class="cards">
+    <div class="box"><h3>LeetCode</h3><p>3–5 problemas por semana, método 20 min + solução + revisão espaçada. Guia em <code>guias/</code>.</p></div>
+    <div class="box"><h3>Curso Java Backend (Itaú + DIO)</h3><p>Trilha de Java Backend da DIO em parceria com o Itaú.</p></div>
+    <div class="box"><h3>Inglês</h3><p>Todo tópico da semana tem uma tarefa EN: ler, falar, escrever e explicar em voz alta.</p></div>
+    <div class="box"><h3>Java POO (Udemy)</h3><p>Curso de Java com orientação a objetos na Udemy.</p></div>
+  </div>
+</section>
+
+<section id="projetos">
+  <h2>Projetos</h2><p class="lead">Sites em produção e código no GitHub.</p>
+  <div class="cards">
+    <div class="box"><h3><a href="https://www.rubini-training.com.br/">Rubini Training</a></h3><p>Site em produção do projeto Rubini.</p><div class="tags"><span>Web</span><span>Produção</span></div></div>
+    <div class="box"><h3><a href="https://www.eunicemarquesterapeuta.com.br/">Eunice Marques Terapeuta</a></h3><p>Site em produção para uma terapeuta.</p><div class="tags"><span>Web</span><span>Produção</span></div></div>
+    <div class="box"><h3><a href="https://github.com/kauaazn/codecast-api">codecast-api</a></h3><p>API de código aberto no GitHub.</p><div class="tags"><span>API</span><span>GitHub</span></div></div>
+  </div>
+  <p class="lead" style="margin-top:18px">Próximos: API REST em Spring Boot com testes, depois um sistema orientado a eventos (ver roadmap).</p>
+</section>
+
+<section id="sobre">
+  <h2>Sobre mim</h2><p class="lead">&nbsp;</p>
+  <div class="about">
+    <p>Estudante de Ciência da Computação, no início da carreira, evoluindo passo a passo para conquistar uma vaga de desenvolvedor júnior e, a longo prazo, consolidar a carreira como Engenheiro de Software.</p>
+    <p>Acredito em base sólida: estruturas de dados, bancos, testes, arquitetura, e em comunicação clara, inclusive em inglês.</p>
+  </div>
+</section>
+
+<section id="experiencia">
+  <h2>Minha experiência</h2><p class="lead">&nbsp;</p>
+  <div class="exp">
+    <h3>Meep</h3><div class="d">ESTAGIÁRIO DE DESENVOLVIMENTO · MAR 2026 – ATUAL</div>
+    <ul>
+      <li>Atuo no desenvolvimento e na manutenção de sistemas internos e externos, colaborando com a equipe na criação de funcionalidades e melhorias para diferentes necessidades do negócio.</li>
+      <li>Trabalho com .NET no backend e React no frontend, usando Git e GitHub para versionamento e acompanhamento das alterações.</li>
+      <li>Contribuo em funcionalidades de reservas, filas de espera, pagamentos e relatórios.</li>
+      <li>Também atuo em sistemas de CRM e gestão de campanhas, compliance e portais de acesso.</li>
+    </ul>
+    <h3 style="margin-top:32px">Code</h3><div class="d">EMPRESA JÚNIOR · DESENVOLVEDOR FULLSTACK · OUT 2025 – ATUAL</div>
+    <ul>
+      <li>Participo do desenvolvimento de projetos web fullstack com Spring no backend e React no frontend, incluindo APIs de agendamento e landing pages de divulgação da empresa.</li>
+      <li>Colaboro no desenvolvimento de APIs e funcionalidades de agendamento.</li>
+      <li>Desenvolvo interfaces e páginas web com React.</li>
+      <li>Versiono e organizo o código com Git e GitHub.</li>
+    </ul>
+  </div>
+</section>
+</div>
+<footer>Criado com HTML e CSS. © Todos os direitos reservados.</footer>
+</body>
+</html>

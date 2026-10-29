@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Roadmap Java Backend</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1b2632;--navy2:#34465a;--tan:#e6d5c1;--cream:#fcfaf7;--white:#fff;--ink:#1b2632;--mute:#5d6b7a;--accent:#c4562b}
+*{box-sizing:border-box}
+body{margin:0;background:var(--white);color:var(--ink);font-family:Onest,system-ui,sans-serif;padding:32px 20px 80px}
+header{text-align:center;max-width:680px;margin:0 auto 28px}
+h1{display:flex;gap:12px;align-items:center;justify-content:center;font-size:2rem;margin:0 0 6px}
+h1 svg{width:40px;height:40px}
+.sub{font-size:.85rem;color:var(--mute);font-family:"Geist Mono",monospace}
+.obj{margin:12px 0 16px;font-size:.95rem;line-height:1.5}
+.pill{border:1px solid var(--tan);background:var(--white);border-radius:999px;padding:8px 16px;font:500 .85rem Onest;cursor:pointer;color:var(--ink)}
+.pill:hover{background:var(--cream)}
+.tools{text-align:center;margin-bottom:8px}
+.phase{position:relative;max-width:1000px;margin:0 auto 70px}
+.spine{position:absolute;left:50%;top:-60px;bottom:-60px;width:1px;background:var(--tan);transform:translateX(-.5px)}
+.node{position:relative;z-index:2;width:220px;margin:0 auto 40px;background:var(--navy);color:#fff;border-radius:14px;padding:12px 14px;box-shadow:0 6px 18px rgba(27,38,50,.25)}
+.node .row{display:flex;justify-content:space-between;align-items:center;font-weight:600}
+.node .cnt{font:400 .72rem "Geist Mono",monospace;opacity:.8}
+.bar{height:4px;background:var(--navy2);border-radius:4px;margin-top:8px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--tan);transition:width .3s}
+.weeks{position:relative;display:grid;grid-template-columns:1fr 110px 1fr;row-gap:28px}
+.week{position:relative;z-index:2;background:var(--white);border:1px solid #ece4d9;border-radius:14px;padding:14px;box-shadow:0 2px 10px rgba(27,38,50,.06);align-self:start}
+.week.l{grid-column:1}.week.r{grid-column:3}
+.wk-head{display:flex;gap:10px;align-items:flex-start;cursor:pointer}
+.wk-label{font:500 .62rem "Geist Mono",monospace;letter-spacing:.1em;color:var(--navy2)}
+.wk-title{font-weight:600;font-size:.95rem;line-height:1.25;flex:1}
+.wk-meta{font:400 .7rem "Geist Mono",monospace;color:var(--mute);white-space:nowrap;display:flex;gap:8px;align-items:center}
+.chev{transition:transform .2s}.week.open .chev{transform:rotate(180deg)}
+.topics{display:none;flex-wrap:wrap;gap:6px;margin-top:12px}
+.week.open .topics{display:flex}
+.t{display:flex;gap:8px;align-items:center;background:var(--cream);border:1px solid #f0e8dc;border-radius:10px;padding:6px 10px;font-size:.82rem;cursor:pointer}
+.t.done span{text-decoration:line-through;color:var(--mute)}
+.t em{font-style:normal;font:600 .65rem Onest;background:var(--navy);color:#fff;border-radius:999px;padding:2px 8px}
+.tag{font:600 .6rem "Geist Mono",monospace;padding:1px 5px;border-radius:5px}
+.tag.lc{background:#fde8d7;color:#9a4210}.tag.en{background:#dbeafe;color:#1e4f9a}
+input[type=checkbox]{appearance:none;width:18px;height:18px;border:1.5px solid var(--navy2);border-radius:5px;background:#fff;flex:none;cursor:pointer;margin:0;display:grid;place-content:center}
+input[type=checkbox]:checked{background:var(--navy);border-color:var(--navy)}
+input[type=checkbox]:checked::after{content:"";width:9px;height:5px;border:2px solid #fff;border-top:0;border-right:0;transform:rotate(-45deg) translate(1px,-1px)}
+svg.wires{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1;overflow:visible}
+svg.wires path{fill:none;stroke:#c9a98a;stroke-width:1.5}
+@media(max-width:760px){
+ body{padding:20px 12px 60px}
+ .spine{left:14px}
+ .node{margin:0 0 28px 28px;width:auto}
+ .weeks{grid-template-columns:1fr;padding-left:28px}
+ .week.l,.week.r{grid-column:1}
+ svg.wires{display:none}
+ .weeks::before{content:"";position:absolute;left:-14px;top:0;bottom:0;width:1px;background:var(--tan)}
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>
+    <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M22 8c6 6-6 9 0 16M32 6c8 8-8 11 0 20" fill="none" stroke="#e11d2e" stroke-width="3" stroke-linecap="round"/><path d="M10 32h36v8a14 14 0 0 1-14 14h-8a14 14 0 0 1-14-14z" fill="#2a6db0"/><path d="M46 34h4a6 6 0 0 1 0 14h-6" fill="none" stroke="#2a6db0" stroke-width="3.5"/><path d="M8 58h40" stroke="#e11d2e" stroke-width="3.5" stroke-linecap="round"/></svg>
+    <span id="title"></span>
+  </h1>
+  <div class="sub" id="weeks"></div>
+  <p class="obj"><b>Objetivo:</b> <span id="obj"></span></p>
+  <div class="tools"><button class="pill" id="toggleAll">⇕ Expandir tudo</button></div>
+</header>
+<main id="root"></main>
+<script src="roadmap-data.js"></script>
+<script>
+const R = window.ROADMAP, KEY = "roadmap-java-v1";
+let state = {}; try { state = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (e) {}
+const save = () => { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {} };
+document.getElementById("title").textContent = R.title;
+document.getElementById("weeks").textContent = R.weeks + " semanas";
+document.getElementById("obj").textContent = R.objective;
+const root = document.getElementById("root");
+const chev = '<svg class="chev" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>';
+let n = 0; const allTopics = [];
+
+R.phases.forEach((p, pi) => {
+  const ph = document.createElement("section"); ph.className = "phase";
+  ph.innerHTML = '<div class="spine"></div><div class="node"><div class="row"><span>' + p.name + '</span><span class="cnt"></span></div><div class="bar"><i></i></div></div><div class="weeks"><svg class="wires"></svg></div>';
+  const wk = ph.querySelector(".weeks");
+  p.weeks.forEach((w, wi) => {
+    n++; const wn = n;
+    const el = document.createElement("article"); el.className = "week " + (wi % 2 ? "r" : "l"); el.style.gridRow = wi + 1;
+    el.dataset.wk = wn;
+    el.innerHTML = '<div class="wk-head"><input type="checkbox" aria-label="Semana concluída"><div style="flex:1"><div class="wk-label">SEMANA ' + String(wn).padStart(2, "0") + '</div><div class="wk-title">' + w.title + '</div></div><div class="wk-meta"><span class="c"></span>' + chev + '</div></div><div class="topics"></div>';
+    const tw = el.querySelector(".topics");
+    w.topics.forEach((t, ti) => {
+      const id = wn + "." + ti, m = t.match(/^(LC|EN):\s*(.*)/);
+      const lab = document.createElement("label"); lab.className = "t"; lab.dataset.id = id;
+      lab.innerHTML = '<input type="checkbox">' + (m ? '<b class="tag ' + m[1].toLowerCase() + '">' + m[1] + '</b>' : "") + '<span>' + (m ? m[2] : t) + '</span>';
+      const cb = lab.querySelector("input"); cb.checked = !!state[id];
+      cb.addEventListener("change", () => { state[id] = cb.checked; save(); refresh(); });
+      allTopics.push({ id, lab }); tw.appendChild(lab);
+    });
+    el.querySelector(".wk-head").addEventListener("click", e => {
+      if (e.target.matches("input")) return;
+      el.classList.toggle("open"); wire();
+    });
+    const wcb = el.querySelector(".wk-head input");
+    wcb.addEventListener("change", () => {
+      w.topics.forEach((_, ti) => state[wn + "." + ti] = wcb.checked);
+      el.querySelectorAll(".topics input").forEach(i => i.checked = wcb.checked);
+      save(); refresh();
+    });
+    wk.appendChild(el);
+  });
+  root.appendChild(ph);
+});
+
+function refresh() {
+  document.querySelectorAll(".week").forEach(el => {
+    const cbs = [...el.querySelectorAll(".topics input")], d = cbs.filter(c => c.checked).length;
+    el.querySelector(".c").textContent = d + "/" + cbs.length;
+    el.querySelector(".wk-head input").checked = d === cbs.length;
+    cbs.forEach(c => c.closest(".t").classList.toggle("done", c.checked));
+  });
+  document.querySelectorAll(".phase").forEach(ph => {
+    const cbs = [...ph.querySelectorAll(".topics input")], d = cbs.filter(c => c.checked).length;
+    ph.querySelector(".cnt").textContent = d + "/" + cbs.length;
+    ph.querySelector(".bar i").style.width = (cbs.length ? d / cbs.length * 100 : 0) + "%";
+  });
+  document.querySelectorAll(".t em").forEach(e => e.remove());
+  const next = allTopics.find(t => !t.lab.querySelector("input").checked);
+  if (next) { const e = document.createElement("em"); e.textContent = "Próximo"; next.lab.appendChild(e); }
+}
+
+function wire() {
+  requestAnimationFrame(() => document.querySelectorAll(".phase").forEach(ph => {
+    const svg = ph.querySelector(".wires"), box = ph.querySelector(".weeks").getBoundingClientRect(), nd = ph.querySelector(".node").getBoundingClientRect();
+    svg.innerHTML = ""; if (innerWidth <= 760) return;
+    const x0 = nd.left + nd.width / 2 - box.left, y0 = nd.top + nd.height / 2 - box.top;
+    ph.querySelectorAll(".week").forEach(w => {
+      const r = w.getBoundingClientRect(), left = w.classList.contains("l");
+      const x1 = (left ? r.right : r.left) - box.left, y1 = r.top - box.top + 34;
+      const p = document.createElementNS("http://www.w3.org/2000/svg", "path");
+      p.setAttribute("d", `M${x0},${y0} C${x0},${y1} ${(x0 + x1) / 2},${y1} ${x1},${y1}`);
+      svg.appendChild(p);
+    });
+  }));
+}
+
+let allOpen = false;
+document.getElementById("toggleAll").addEventListener("click", e => {
+  allOpen = !allOpen;
+  document.querySelectorAll(".week").forEach(w => w.classList.toggle("open", allOpen));
+  e.target.textContent = allOpen ? "⇕ Recolher tudo" : "⇕ Expandir tudo";
+  wire();
+});
+addEventListener("resize", wire); addEventListener("load", wire);
+if (document.fonts) document.fonts.ready.then(wire);
+refresh(); wire();
+</script>
+</body>
+</html>
