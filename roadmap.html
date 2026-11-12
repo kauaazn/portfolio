@@ -43,6 +43,9 @@ h1 svg{width:40px;height:40px}
 input[type=checkbox]{appearance:none;width:18px;height:18px;border:1.5px solid var(--navy2);border-radius:5px;background:#fff;flex:none;cursor:pointer;margin:0;display:grid;place-content:center}
 input[type=checkbox]:checked{background:var(--navy);border-color:var(--navy)}
 input[type=checkbox]:checked::after{content:"";width:9px;height:5px;border:2px solid #fff;border-top:0;border-right:0;transform:rotate(-45deg) translate(1px,-1px)}
+body.embed .bar,body.embed .cnt,body.embed .wk-meta .c,body.embed .t em,body.embed input[type=checkbox]{display:none}
+body.embed .t{cursor:default}body.embed .t span{text-decoration:none!important;color:inherit!important}
+.wk-head:focus-visible,.pill:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:8px}
 svg.wires{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1;overflow:visible}
 svg.wires path{fill:none;stroke:#c9a98a;stroke-width:1.5}
 @media(max-width:760px){
@@ -69,6 +72,7 @@ svg.wires path{fill:none;stroke:#c9a98a;stroke-width:1.5}
 <main id="root"></main>
 <script src="roadmap-data.js"></script>
 <script>
+if (new URLSearchParams(location.search).has("embed")) document.body.classList.add("embed");
 const R = window.ROADMAP, KEY = "roadmap-java-v1";
 let state = {}; try { state = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (e) {}
 const save = () => { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {} };
@@ -87,7 +91,7 @@ R.phases.forEach((p, pi) => {
     n++; const wn = n;
     const el = document.createElement("article"); el.className = "week " + (wi % 2 ? "r" : "l"); el.style.gridRow = wi + 1;
     el.dataset.wk = wn;
-    el.innerHTML = '<div class="wk-head"><input type="checkbox" aria-label="Semana concluída"><div style="flex:1"><div class="wk-label">SEMANA ' + String(wn).padStart(2, "0") + '</div><div class="wk-title">' + w.title + '</div></div><div class="wk-meta"><span class="c"></span>' + chev + '</div></div><div class="topics"></div>';
+    el.innerHTML = '<div class="wk-head" role="button" tabindex="0" aria-expanded="false"><input type="checkbox" aria-label="Semana concluída"><div style="flex:1"><div class="wk-label">SEMANA ' + String(wn).padStart(2, "0") + '</div><div class="wk-title">' + w.title + '</div></div><div class="wk-meta"><span class="c"></span>' + chev + '</div></div><div class="topics"></div>';
     const tw = el.querySelector(".topics");
     w.topics.forEach((t, ti) => {
       const id = wn + "." + ti, m = t.match(/^(LC|EN):\s*(.*)/);
@@ -97,10 +101,13 @@ R.phases.forEach((p, pi) => {
       cb.addEventListener("change", () => { state[id] = cb.checked; save(); refresh(); });
       allTopics.push({ id, lab }); tw.appendChild(lab);
     });
-    el.querySelector(".wk-head").addEventListener("click", e => {
+    const head = el.querySelector(".wk-head");
+    const toggle = e => {
       if (e.target.matches("input")) return;
-      el.classList.toggle("open"); wire();
-    });
+      el.classList.toggle("open"); head.setAttribute("aria-expanded", el.classList.contains("open")); wire();
+    };
+    head.addEventListener("click", toggle);
+    head.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggle(e); } });
     const wcb = el.querySelector(".wk-head input");
     wcb.addEventListener("change", () => {
       w.topics.forEach((_, ti) => state[wn + "." + ti] = wcb.checked);
@@ -147,7 +154,7 @@ function wire() {
 let allOpen = false;
 document.getElementById("toggleAll").addEventListener("click", e => {
   allOpen = !allOpen;
-  document.querySelectorAll(".week").forEach(w => w.classList.toggle("open", allOpen));
+  document.querySelectorAll(".week").forEach(w => { w.classList.toggle("open", allOpen); w.querySelector(".wk-head").setAttribute("aria-expanded", allOpen); });
   e.target.textContent = allOpen ? "⇕ Recolher tudo" : "⇕ Expandir tudo";
   wire();
 });

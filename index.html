@@ -3,8 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Kauã | Java Backend</title>
-<meta name="description" content="Estudante de Ciência da Computação e estagiário na Meep, construindo carreira em Engenharia de Software com Java Backend.">
+<title>Kauã Reis | Java Backend</title>
+<meta name="description" content="Kauã Reis, estudante de Ciência da Computação e dev fullstack. Foco em Java Backend, com experiência em Spring Boot, .NET e React.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Kauã Reis | Java Backend">
+<meta property="og:description" content="Foco em Java Backend, com experiência fullstack em Spring Boot, .NET e React. Projetos, experiência e roadmap de estudos.">
+<meta property="og:image" content="https://portfolio-eight-theta-13.vercel.app/foto.jpg">
+<meta property="og:url" content="https://portfolio-eight-theta-13.vercel.app/">
+<meta name="twitter:card" content="summary">
 <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Geist+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root{--ink:#2c3b4d;--navy:#1b2632;--tan:#e6d5c1;--cream:#fcfaf7;--accent:#c4562b;--mute:#5d6b7a}
@@ -13,9 +19,15 @@ html{scroll-behavior:smooth}
 body{margin:0;color:var(--ink);background:#fff;font-family:"Geist Mono",ui-monospace,monospace;line-height:1.6}
 a{color:var(--accent);text-decoration:underline;text-decoration-color:var(--tan);text-underline-offset:4px}
 .wrap{max-width:960px;margin:0 auto;padding:0 20px}
-nav{padding:20px;font:700 1.3rem Onest;color:var(--navy);letter-spacing:-.02em}
+.skip{position:absolute;left:-999px;top:8px;background:var(--navy);color:#fff;padding:8px 14px;border-radius:8px;z-index:10}.skip:focus{left:8px}
+nav{position:sticky;top:0;z-index:5;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid #f0e8dc;padding:12px 20px;display:flex;flex-wrap:wrap;gap:8px 22px;align-items:center;font:700 1.2rem Onest;color:var(--navy);letter-spacing:-.02em}
+nav .links{display:flex;flex-wrap:wrap;gap:4px 18px;margin-left:auto;font:500 .8rem "Geist Mono",monospace}
+nav .links a{color:var(--navy);text-decoration:none;padding:4px 0;border-bottom:2px solid transparent}
+nav .links a:hover{border-color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 nav small{font-weight:400;color:var(--mute);font-family:"Geist Mono"}
-section{text-align:center;margin-bottom:84px;scroll-margin-top:20px}
+section{text-align:center;margin-bottom:84px;scroll-margin-top:70px}
 h2{font-size:1.5rem;margin:0;color:var(--navy)}
 .lead{color:var(--mute);margin:6px 0 28px;font-size:.9rem}
 .hero{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;min-height:80vh}
@@ -45,19 +57,20 @@ footer{text-align:center;padding:30px 20px 50px;color:var(--mute);font-size:.8re
 </style>
 </head>
 <body>
-<nav>Kauã Reis<small> / java backend</small></nav>
-<div class="wrap">
+<a class="skip" href="#projetos">Pular para o conteúdo</a>
+<nav aria-label="Principal"><span>Kauã Reis<small> / java backend</small></span><div class="links"><a href="#roadmap">Roadmap</a><a href="#projetos">Projetos</a><a href="#experiencia">Experiência</a><a href="#formacao">Formação</a><a href="#competencias">Competências</a><a href="#contato">Contato</a></div></nav>
+<main class="wrap">
 
 <section class="hero" id="top">
   <div>
     <img class="photo" src="foto.jpg" alt="Foto de Kauã Antônio Reis" style="object-fit:cover;width:100%">
     <p style="margin:18px 0 0;font-size:.8rem">Oi! Eu sou o(a)</p>
     <h1>Kauã Reis :)</h1>
-    <p style="margin:0;font-size:.8rem;color:var(--mute)">Desenvolvedor Backend Java · Fullstack 🎓</p>
+    <p style="margin:0;font-size:.8rem;color:var(--mute)">Java Backend, com experiência fullstack 🎓</p>
   </div>
   <div>
     <p>Estudante de Ciência da Computação, <span class="hl">estagiário na Meep</span> e dev fullstack na <span class="hl">CODE Júnior</span>.</p>
-    <p>Estou construindo minha carreira para me tornar <span class="hl">Engenheiro de Software</span>, com foco em <span class="hl">Java Backend</span>,<br>documentando essa jornada aqui:</p>
+    <p>Estou construindo minha carreira para me tornar <span class="hl">Engenheiro de Software</span>, com foco em <span class="hl">Java Backend</span> e experiência fullstack em <span class="hl">.NET</span> e <span class="hl">React</span>.<br>Documento minha jornada de estudos aqui:</p>
     <a class="card" href="#roadmap"><b>Meu roadmap de 24 semanas</b>Java · LeetCode · Arquitetura · Inglês →</a>
     <p style="font-size:.85rem">E também no <a href="https://github.com/kauaazn">GitHub</a> e <a href="https://www.linkedin.com/in/kau%C3%A3-reis-06b99137b/">LinkedIn</a></p>
   </div>
@@ -65,8 +78,8 @@ footer{text-align:center;padding:30px 20px 50px;color:var(--mute);font-size:.8re
 
 <section id="roadmap">
   <h2>Meu roadmap de estudos</h2>
-  <p class="lead">Tudo o que estou estudando pra me tornar Engenheiro de Software com Java Backend.</p>
-  <div class="rm"><iframe src="roadmap.html" title="Roadmap Java Backend" loading="lazy"></iframe><a href="roadmap.html" title="Abrir em tela cheia">⛶</a></div>
+  <p class="lead">O plano de 24 semanas que sigo pra me tornar Engenheiro de Software com Java Backend.</p>
+  <div class="rm"><iframe src="roadmap.html?embed=1" title="Roadmap Java Backend" loading="lazy"></iframe><a href="roadmap.html?embed=1" title="Abrir em tela cheia" aria-label="Abrir roadmap em tela cheia">⛶</a></div>
 </section>
 
 <section id="como-estudo">
@@ -83,8 +96,8 @@ footer{text-align:center;padding:30px 20px 50px;color:var(--mute);font-size:.8re
   <h2>Projetos</h2><p class="lead">Código no GitHub e sites em produção.</p>
   <div class="cards">
     <div class="box"><h3><a href="https://github.com/kauaazn/driver-logbook">Driver Logbook</a></h3><p>Diário de bordo de frota (fullstack). API REST para veículos, turnos e avarias, com regras de negócio (um turno ativo por vez; km final não pode ser menor que o inicial). Frontend com histórico filtrável, resumo de horas e exportação CSV.</p><div class="tags"><span>Java</span><span>Spring Boot</span><span>JPA</span><span>PostgreSQL</span><span>Next.js</span><span>Docker Compose</span></div></div>
-    <div class="box"><h3><a href="https://github.com/kauaazn/codecast-api">CodeCast API</a></h3><p>API REST de agendamento de estúdios. CRUD de Studio, Host e Booking em camadas, detecção de conflito de horário com JPQL, datas em UTC, tratamento global de erros e Swagger UI.</p><div class="tags"><span>Java 21</span><span>Spring Boot</span><span>H2</span><span>Swagger</span></div></div>
-    <div class="box"><h3><a href="https://course-schedule-wine.vercel.app">Course Schedule</a> · <a href="https://github.com/kauaazn/course-schedule">código</a></h3><p>Planejador de grade horária: criação e comparação de grades, calendário semanal com detecção de conflito, busca de disciplinas e exportação CSV.</p><div class="tags"><span>React</span><span>TypeScript</span><span>Vite</span></div></div>
+    <div class="box"><h3>CodeCast API</h3><p>API REST de agendamento de estúdios. CRUD de Studio, Host e Booking em camadas, detecção de conflito de horário com JPQL, datas em UTC, tratamento global de erros e Swagger UI.</p><div class="tags"><span>Java 21</span><span>Spring Boot</span><span>H2</span><span>Swagger</span></div></div>
+    <div class="box"><h3><a href="https://course-schedule-wine.vercel.app">Course Schedule</a></h3><p>Planejador de grade horária: criação e comparação de grades, calendário semanal com detecção de conflito, busca de disciplinas e exportação CSV.</p><div class="tags"><span>React</span><span>TypeScript</span><span>Vite</span></div></div>
     <div class="box"><h3><a href="https://www.rubini-training.com.br/">Studio Rubini Training</a></h3><p>Site institucional com serviços, depoimentos e agendamento de avaliação gratuita via WhatsApp.</p><div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div></div>
     <div class="box"><h3><a href="https://www.eunicemarquesterapeuta.com.br/">Eunice Marques Terapeuta</a></h3><p>Site institucional com especialidades, explicação do processo terapêutico, FAQ e contato via WhatsApp.</p><div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div></div>
   </div>
@@ -143,7 +156,12 @@ footer{text-align:center;padding:30px 20px 50px;color:var(--mute);font-size:.8re
     <div class="box"><h3>Idiomas</h3><div class="tags"><span>Português: nativo</span><span>Inglês: intermediário</span></div></div>
   </div>
 </section>
-</div>
+<section id="contato">
+  <h2>Contato</h2><p class="lead">Vamos conversar sobre estágio ou vaga júnior em backend Java ou fullstack.</p>
+  <p><a class="card" style="display:inline-block;margin:0" href="https://www.linkedin.com/in/kau%C3%A3-reis-06b99137b/">Falar comigo no LinkedIn →</a></p>
+  <p style="font-size:.85rem">Código no <a href="https://github.com/kauaazn">GitHub</a></p>
+</section>
+</main>
 <footer>Criado com HTML e CSS. © Todos os direitos reservados.</footer>
 </body>
 </html>
