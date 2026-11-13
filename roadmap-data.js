@@ -1,9 +1,9 @@
 // Edite aqui: fases, semanas e tópicos. Prefixos: "LC:" = LeetCode, "EN:" = Inglês.
 window.ROADMAP = {
-  title: "Roadmap Java Backend",
+  title: "Roadmap de Engenharia de Software",
   weeks: 24,
   objective:
-    "Construir uma base sólida em Engenharia de Software com foco em Java Backend: fundamentos, estruturas de dados, bancos, testes, arquitetura e sistemas distribuídos, com inglês em paralelo.",
+    "Construir uma base sólida em Engenharia de Software: fundamentos, estruturas de dados, bancos, testes, arquitetura e sistemas distribuídos, com inglês em paralelo.",
   phases: [
     {
       name: "Fundamentos",
