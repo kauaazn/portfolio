@@ -3,167 +3,666 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Kauã Reis | Engenharia de Software</title>
-<meta name="description" content="Kauã Reis, estudante de Ciência da Computação e dev fullstack. Foco em engenharia de software, com experiência em Spring Boot, .NET e React.">
+<title>Kauã Reis | Desenvolvedor Fullstack</title>
+<meta name="description" content="Kauã Reis, desenvolvedor Fullstack com foco em Backend e Engenharia de Software. Experiência com Java, Spring Boot, C#/.NET, React e Next.js em sistemas e APIs reais.">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0b0c0f">
+<link rel="canonical" href="https://kauaareis.vercel.app/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Kauã Reis | Engenharia de Software">
-<meta property="og:description" content="Foco em engenharia de software, com experiência fullstack em Spring Boot, .NET e React. Projetos, experiência e roadmap de estudos.">
-<meta property="og:image" content="https://portfolio-eight-theta-13.vercel.app/foto.jpg">
-<meta property="og:url" content="https://portfolio-eight-theta-13.vercel.app/">
+<meta property="og:title" content="Kauã Reis | Desenvolvedor Fullstack">
+<meta property="og:description" content="Foco em Backend e Engenharia de Software. Experiência prática com Java, Spring Boot, C#/.NET e React em sistemas e APIs reais.">
+<meta property="og:image" content="https://kauaareis.vercel.app/foto.jpg">
+<meta property="og:url" content="https://kauaareis.vercel.app/">
+<meta property="og:locale" content="pt_BR">
 <meta name="twitter:card" content="summary">
-<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Geist+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Kauã Antônio Reis",
+  "alternateName": "Kauã Reis",
+  "jobTitle": "Desenvolvedor Fullstack",
+  "url": "https://kauaareis.vercel.app/",
+  "image": "https://kauaareis.vercel.app/foto.jpg",
+  "sameAs": ["https://github.com/kauaazn", "https://linkedin.com/in/kauareiss"],
+  "address": {"@type": "PostalAddress", "addressLocality": "Belo Horizonte", "addressRegion": "MG", "addressCountry": "BR"}
+}
+</script>
 <style>
-:root{--ink:#2c3b4d;--navy:#1b2632;--tan:#e6d5c1;--cream:#fcfaf7;--accent:#c4562b;--mute:#5d6b7a}
+:root{
+  --bg:#0a0a0c;
+  --bg-1:#111216;
+  --bg-2:#16171c;
+  --border:rgba(255,255,255,.09);
+  --border-2:rgba(255,255,255,.16);
+  --ink:#eef0f3;
+  --ink-dim:#a3a6ad;
+  --ink-dimmer:#6d7078;
+  --accent:#5b8cff;
+  --accent-ink:#dce6ff;
+  --accent-soft:rgba(91,140,255,.12);
+  --accent-soft-2:rgba(91,140,255,.22);
+  --radius:16px;
+  --sans:"Onest",ui-sans-serif,system-ui,-apple-system,sans-serif;
+  --mono:"Geist Mono",ui-monospace,"SF Mono",Menlo,monospace;
+  --maxw:1180px;
+}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;color:var(--ink);background:#fff;font-family:"Geist Mono",ui-monospace,monospace;line-height:1.6}
-a{color:var(--accent);text-decoration:underline;text-decoration-color:var(--tan);text-underline-offset:4px}
-.wrap{max-width:960px;margin:0 auto;padding:0 20px}
-.skip{position:absolute;left:-999px;top:8px;background:var(--navy);color:#fff;padding:8px 14px;border-radius:8px;z-index:10}.skip:focus{left:8px}
-nav{position:sticky;top:0;z-index:5;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid #f0e8dc;padding:12px 20px;display:flex;flex-wrap:wrap;gap:8px 22px;align-items:center;font:700 1.2rem Onest;color:var(--navy);letter-spacing:-.02em}
-nav .links{display:flex;flex-wrap:wrap;gap:4px 18px;margin-left:auto;font:500 .8rem "Geist Mono",monospace}
-nav .links a{color:var(--navy);text-decoration:none;padding:4px 0;border-bottom:2px solid transparent}
-nav .links a:hover{border-color:var(--accent)}
-a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-nav small{font-weight:400;color:var(--mute);font-family:"Geist Mono"}
-section{text-align:center;margin-bottom:84px;scroll-margin-top:70px}
-h2{font-size:1.5rem;margin:0;color:var(--navy)}
-.lead{color:var(--mute);margin:6px 0 28px;font-size:.9rem}
-.hero{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;min-height:80vh}
-.photo{aspect-ratio:4/5;max-width:300px;margin:auto;border-radius:24px;background:linear-gradient(160deg,var(--navy),#34465a);display:grid;place-content:center;color:var(--tan);font:700 5rem Onest;box-shadow:0 14px 30px rgba(27,38,50,.25)}
-.hero h1{font-size:1.6rem;color:var(--navy);margin:14px 0 2px}
-.hl{color:var(--accent)}
-.card{display:block;text-decoration:none;color:#fff;background:var(--navy);border-radius:20px;padding:26px;text-align:left;margin:22px 0 10px;box-shadow:0 10px 24px rgba(27,38,50,.25)}
-.card b{font:700 1.5rem Onest;display:block}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;text-align:left}
-.box{border:1px solid var(--tan);border-radius:16px;padding:18px;background:var(--cream)}
-.box h3{margin:0 0 6px;font:600 1rem Onest;color:var(--navy)}
-.box p{margin:0;font-size:.82rem;color:var(--mute)}
-.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
-.tags span{font-size:.7rem;background:#fff;border:1px solid var(--tan);border-radius:999px;padding:2px 10px}
-.rm{height:78vh;min-height:520px;border-radius:16px;overflow:hidden;box-shadow:0 8px 24px rgba(27,38,50,.15);border:1px solid rgba(230,213,193,.7);position:relative}
-.rm iframe{width:100%;height:100%;border:0}
-.rm a{position:absolute;top:12px;right:12px;width:40px;height:40px;border-radius:50%;background:#fffe;display:grid;place-content:center;box-shadow:0 2px 8px #0003;text-decoration:none;color:var(--navy)}
-.exp{text-align:left;max-width:720px;margin:0 auto}
-.exp h3{font:700 1.2rem Onest;margin:0;color:var(--navy)}
-.exp .d{font-size:.75rem;color:var(--mute);letter-spacing:.08em}
-.exp ul{list-style:none;padding:0;margin:10px 0 0}
-.exp li{padding-left:18px;position:relative;margin:6px 0;font-size:.88rem}
-.exp li::before{content:"▸";position:absolute;left:0;color:var(--accent)}
-.about{max-width:620px;margin:0 auto;text-align:left;font-size:.92rem}
-footer{text-align:center;padding:30px 20px 50px;color:var(--mute);font-size:.8rem;border-top:1px solid var(--tan)}
-@media(max-width:760px){.hero{grid-template-columns:1fr;min-height:0;padding-top:10px}}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:var(--sans);line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+@media(max-width:640px){.wrap{padding:0 20px}}
+
+.skip{position:absolute;left:-999px;top:auto;background:var(--accent);color:#06070a;padding:10px 16px;border-radius:8px;z-index:100;font-weight:600;text-decoration:none}
+.skip:focus{left:16px;top:16px}
+
+::selection{background:var(--accent-soft-2);color:var(--ink)}
+
+a:focus-visible,button:focus-visible,.btn:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+
+/* ---------- nav ---------- */
+.nav{
+  position:sticky;top:0;z-index:40;
+  background:rgba(10,10,12,.78);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--border);
+}
+.nav .wrap{display:flex;align-items:center;gap:20px;padding-top:16px;padding-bottom:16px}
+.nav .brand{font-weight:700;font-size:1rem;letter-spacing:-.01em;text-decoration:none;color:var(--ink);display:flex;align-items:baseline;gap:8px}
+.nav .brand small{font-family:var(--mono);font-weight:400;font-size:.68rem;color:var(--ink-dimmer);letter-spacing:.02em}
+.nav .links{display:flex;gap:28px;margin-left:auto;font-size:.86rem}
+.nav .links a{text-decoration:none;color:var(--ink-dim);padding:4px 0;border-bottom:1px solid transparent;transition:color .15s,border-color .15s}
+.nav .links a:hover{color:var(--ink);border-color:var(--accent)}
+.nav .burger{display:none;background:none;border:1px solid var(--border-2);border-radius:8px;width:38px;height:38px;color:var(--ink);cursor:pointer;margin-left:auto}
+.nav .burger svg{pointer-events:none}
+.mobile-menu{display:none}
+
+@media(max-width:820px){
+  .nav .links{display:none}
+  .nav .burger{display:flex;align-items:center;justify-content:center}
+  .mobile-menu{
+    display:block;position:fixed;inset:0;top:69px;background:var(--bg);z-index:39;
+    padding:12px 20px 32px;transform:translateY(-8px);opacity:0;pointer-events:none;
+    transition:opacity .18s ease,transform .18s ease;
+  }
+  .mobile-menu.open{opacity:1;transform:translateY(0);pointer-events:auto}
+  .mobile-menu a{display:block;padding:16px 4px;font-size:1.05rem;text-decoration:none;color:var(--ink);border-bottom:1px solid var(--border)}
+}
+
+/* ---------- layout helpers ---------- */
+section{padding:96px 0;scroll-margin-top:76px}
+section.tight{padding-top:0}
+@media(max-width:760px){section{padding:64px 0}}
+.eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin:0 0 14px;display:flex;align-items:center;gap:8px}
+.eyebrow::before{content:"";width:16px;height:1px;background:var(--accent)}
+h2.title{font-size:clamp(1.6rem,3vw,2.1rem);margin:0 0 10px;letter-spacing:-.02em;font-weight:700}
+.section-head{max-width:620px;margin-bottom:48px}
+.section-head p{color:var(--ink-dim);margin:0;font-size:1rem}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease, transform .6s ease}
+.reveal.is-visible{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+/* ---------- buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;gap:8px;text-decoration:none;
+  font:600 .88rem var(--sans);padding:12px 20px;border-radius:10px;border:1px solid transparent;
+  cursor:pointer;transition:transform .15s ease,background .15s ease,border-color .15s ease,color .15s ease;
+}
+.btn:hover{transform:translateY(-1px)}
+.btn-primary{background:var(--accent);color:#06070a}
+.btn-primary:hover{background:#79a0ff}
+.btn-ghost{background:transparent;border-color:var(--border-2);color:var(--ink)}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent-ink)}
+.btn-sm{padding:9px 14px;font-size:.8rem}
+.btn svg{width:15px;height:15px}
+
+/* ---------- hero ---------- */
+.hero{padding-top:64px}
+.hero .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.hero h1{font-size:clamp(2.1rem,4.4vw,3.1rem);line-height:1.08;letter-spacing:-.03em;margin:0 0 6px;font-weight:800}
+.hero .role{font-size:clamp(1.05rem,2vw,1.3rem);color:var(--accent-ink);margin:0 0 20px;font-weight:600}
+.hero p.lede{color:var(--ink-dim);font-size:1rem;max-width:52ch;margin:0 0 28px}
+.hero .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:26px}
+.availability{
+  display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.76rem;color:var(--ink-dim);
+  border:1px solid var(--border);border-radius:999px;padding:8px 14px;margin-bottom:22px;
+}
+.availability .dot{width:7px;height:7px;border-radius:50%;background:#59d98a;box-shadow:0 0 0 3px rgba(89,217,138,.18)}
+.social-row{display:flex;gap:18px;font-size:.85rem}
+.social-row a{text-decoration:none;color:var(--ink-dim);display:inline-flex;align-items:center;gap:7px;border-bottom:1px solid transparent;transition:color .15s,border-color .15s}
+.social-row a:hover{color:var(--ink);border-color:var(--accent)}
+.social-row svg{width:16px;height:16px}
+
+.hero-photo{position:relative;justify-self:center}
+.hero-photo .frame{
+  width:min(300px,78vw);aspect-ratio:1/1;border-radius:22px;overflow:hidden;
+  border:1px solid var(--border-2);background:var(--bg-1);
+  box-shadow:0 30px 60px -20px rgba(0,0,0,.6);
+}
+.hero-photo img{width:100%;height:100%;object-fit:cover;filter:grayscale(.25) contrast(1.05) brightness(.97)}
+.hero-photo .loc{
+  margin-top:16px;text-align:center;font-family:var(--mono);font-size:.74rem;color:var(--ink-dimmer);
+  display:flex;align-items:center;justify-content:center;gap:6px;
+}
+.hero-photo .loc svg{width:13px;height:13px}
+
+@media(max-width:900px){
+  .hero .grid{grid-template-columns:1fr;gap:40px}
+  .hero-photo{order:-1}
+  .hero-photo .frame{width:min(220px,60vw);margin:0 auto}
+}
+
+/* ---------- about ---------- */
+.about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:48px}
+.about-grid .tag-line{font-family:var(--mono);font-size:.78rem;color:var(--ink-dimmer);text-transform:uppercase;letter-spacing:.08em}
+.about-grid p{color:var(--ink-dim);margin:0 0 16px;max-width:62ch}
+.about-grid p:last-child{margin-bottom:0}
+.about-grid strong{color:var(--ink);font-weight:600}
+@media(max-width:860px){.about-grid{grid-template-columns:1fr;gap:18px}}
+
+/* ---------- experience ---------- */
+.timeline{display:flex;flex-direction:column;gap:28px;max-width:860px}
+.xp-card{
+  border:1px solid var(--border);border-radius:var(--radius);background:var(--bg-1);
+  padding:28px 30px;position:relative;
+}
+.xp-card .head{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 16px;margin-bottom:6px}
+.xp-card .company{font-size:1.12rem;font-weight:700;letter-spacing:-.01em}
+.xp-card .role{color:var(--accent-ink);font-size:.92rem;font-weight:600}
+.xp-card .period{margin-left:auto;font-family:var(--mono);font-size:.72rem;color:var(--ink-dimmer);letter-spacing:.03em;white-space:nowrap}
+.xp-card .tags{display:flex;flex-wrap:wrap;gap:7px;margin:14px 0 16px}
+.xp-card ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px}
+.xp-card li{position:relative;padding-left:18px;color:var(--ink-dim);font-size:.92rem}
+.xp-card li::before{content:"";position:absolute;left:0;top:.6em;width:7px;height:1px;background:var(--accent)}
+
+.tag{font-family:var(--mono);font-size:.7rem;color:var(--ink-dim);border:1px solid var(--border-2);border-radius:999px;padding:4px 11px;background:var(--bg-2)}
+
+.xp-minor{margin-top:32px;border-top:1px solid var(--border);padding-top:24px;display:flex;flex-direction:column;gap:18px;max-width:860px}
+.xp-minor .row{display:flex;flex-wrap:wrap;gap:4px 16px;align-items:baseline}
+.xp-minor .row b{font-size:.92rem;font-weight:600}
+.xp-minor .row span.period{margin-left:auto;font-family:var(--mono);font-size:.7rem;color:var(--ink-dimmer)}
+.xp-minor .row p{flex-basis:100%;margin:4px 0 0;color:var(--ink-dim);font-size:.86rem}
+
+/* ---------- projects ---------- */
+.proj-feature{
+  display:grid;grid-template-columns:1.05fr .95fr;gap:0;border:1px solid var(--border);border-radius:var(--radius);
+  overflow:hidden;background:var(--bg-1);margin-bottom:28px;
+}
+.proj-feature.reverse{grid-template-columns:.95fr 1.05fr}
+.proj-feature.reverse .pf-media{order:2}
+.pf-media{position:relative;background:var(--bg-2);min-height:260px}
+.pf-media img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+.pf-media figcaption{
+  position:absolute;left:0;right:0;bottom:0;padding:10px 16px;font-size:.72rem;color:var(--ink-dim);
+  background:linear-gradient(to top, rgba(0,0,0,.65), transparent);font-family:var(--mono);
+}
+.pf-body{padding:36px 38px;display:flex;flex-direction:column}
+.pf-body .ptitle{font-size:1.4rem;font-weight:700;letter-spacing:-.01em;margin:0 0 10px}
+.pf-body .pdesc{color:var(--ink-dim);margin:0 0 16px;font-size:.95rem}
+.pf-body .problem{font-size:.86rem;color:var(--ink-dim);border-left:2px solid var(--accent);padding-left:12px;margin:0 0 18px}
+.pf-body .problem b{color:var(--ink);font-weight:600}
+.pf-body ul{list-style:none;margin:0 0 20px;padding:0;display:flex;flex-direction:column;gap:8px}
+.pf-body li{position:relative;padding-left:18px;color:var(--ink-dim);font-size:.88rem}
+.pf-body li::before{content:"";position:absolute;left:0;top:.6em;width:7px;height:1px;background:var(--accent)}
+.pf-body .tags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:22px}
+.pf-body .links{display:flex;gap:10px;margin-top:auto}
+@media(max-width:860px){
+  .proj-feature,.proj-feature.reverse{grid-template-columns:1fr}
+  .proj-feature.reverse .pf-media{order:0}
+  .pf-media{min-height:200px}
+  .pf-body{padding:28px 24px}
+}
+
+.proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-bottom:60px}
+@media(max-width:760px){.proj-grid{grid-template-columns:1fr}}
+.proj-card{border:1px solid var(--border);border-radius:var(--radius);background:var(--bg-1);overflow:hidden;display:flex;flex-direction:column}
+.proj-card .pc-media{aspect-ratio:16/10;background:var(--bg-2);position:relative;overflow:hidden}
+.proj-card .pc-media img{width:100%;height:100%;object-fit:cover;object-position:top}
+.proj-card .pc-body{padding:24px 26px;display:flex;flex-direction:column;flex:1}
+.proj-card .badge{display:inline-block;font-family:var(--mono);font-size:.66rem;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);background:var(--accent-soft);border-radius:999px;padding:4px 10px;margin-bottom:12px;align-self:flex-start}
+.proj-card .ptitle{font-size:1.1rem;font-weight:700;margin:0 0 8px;letter-spacing:-.01em}
+.proj-card .pdesc{color:var(--ink-dim);font-size:.87rem;margin:0 0 14px}
+.proj-card .highlight{font-size:.82rem;color:var(--ink-dim);border-left:2px solid var(--accent);padding-left:11px;margin:0 0 14px}
+.proj-card .highlight b{color:var(--ink);font-weight:600}
+.proj-card ul{list-style:none;margin:0 0 16px;padding:0;display:flex;flex-direction:column;gap:7px}
+.proj-card li{position:relative;padding-left:16px;color:var(--ink-dim);font-size:.83rem}
+.proj-card li::before{content:"";position:absolute;left:0;top:.6em;width:6px;height:1px;background:var(--accent)}
+.proj-card .tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px}
+.proj-card .links{display:flex;gap:10px;margin-top:auto}
+
+/* fake terminal for delivery agent */
+.term{background:#09090b;border-radius:10px;border:1px solid var(--border);font-family:var(--mono);font-size:.76rem;padding:16px 16px 14px;color:#b9bcc3;overflow:auto}
+.term .tbar{display:flex;gap:6px;margin-bottom:12px}
+.term .tbar span{width:9px;height:9px;border-radius:50%;background:var(--border-2)}
+.term .u{color:#7bd88f}
+.term .c{color:#5b8cff}
+.term .m{color:#6d7078}
+
+.subhead-row{display:flex;align-items:baseline;gap:14px;margin:0 0 24px}
+.subhead-row h3{font-size:1rem;margin:0;color:var(--ink-dim);font-weight:600;text-transform:uppercase;letter-spacing:.06em;font-family:var(--mono);font-size:.78rem}
+.subhead-row::after{content:"";flex:1;height:1px;background:var(--border)}
+
+/* ---------- stack ---------- */
+.stack-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media(max-width:900px){.stack-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.stack-grid{grid-template-columns:1fr}}
+.stack-card{border:1px solid var(--border);border-radius:var(--radius);background:var(--bg-1);padding:24px 24px}
+.stack-card .sc-head{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.stack-card .sc-head svg{width:18px;height:18px;color:var(--accent)}
+.stack-card h3{margin:0;font-size:.98rem;font-weight:700;letter-spacing:-.01em}
+.stack-card .tags{display:flex;flex-wrap:wrap;gap:7px}
+
+/* ---------- education ---------- */
+.edu-card{border:1px solid var(--border);border-radius:var(--radius);background:var(--bg-1);padding:30px 32px;max-width:760px}
+.edu-card .degree{font-size:1.1rem;font-weight:700;margin:0 0 4px}
+.edu-card .school{color:var(--ink-dim);font-size:.9rem;margin:0 0 2px}
+.edu-card .period{font-family:var(--mono);font-size:.74rem;color:var(--ink-dimmer);margin:0 0 20px}
+.edu-card .certs{list-style:none;margin:0;padding:18px 0 0;border-top:1px solid var(--border);display:flex;flex-direction:column;gap:10px}
+.edu-card .certs li{font-size:.85rem;color:var(--ink-dim);position:relative;padding-left:18px}
+.edu-card .certs li::before{content:"";position:absolute;left:0;top:.6em;width:7px;height:1px;background:var(--accent)}
+.edu-card .certs b{color:var(--ink);font-weight:600}
+
+/* ---------- contact ---------- */
+.contact-box{
+  border:1px solid var(--border-2);border-radius:20px;padding:56px 48px;text-align:center;
+  background:radial-gradient(circle at 50% 0%, var(--accent-soft), transparent 60%),var(--bg-1);
+}
+.contact-box h2{font-size:clamp(1.6rem,3.6vw,2.3rem);margin:0 0 12px;letter-spacing:-.02em}
+.contact-box p{color:var(--ink-dim);margin:0 0 30px;font-size:1rem}
+.contact-box .cta-row{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-bottom:26px}
+.contact-box .social-row{justify-content:center}
+@media(max-width:600px){.contact-box{padding:40px 24px}}
+
+footer{border-top:1px solid var(--border);padding:34px 0}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+footer p{margin:0;color:var(--ink-dimmer);font-size:.8rem}
+footer a{color:var(--ink-dimmer);text-decoration:underline;text-underline-offset:3px}
+footer a:hover{color:var(--ink-dim)}
 </style>
 </head>
 <body>
-<a class="skip" href="#projetos">Pular para o conteúdo</a>
-<nav aria-label="Principal"><span>Kauã Reis<small> / engenharia de software</small></span><div class="links"><a href="#roadmap">Roadmap</a><a href="#projetos">Projetos</a><a href="#experiencia">Experiência</a><a href="#formacao">Formação</a><a href="#competencias">Competências</a><a href="#contato">Contato</a></div></nav>
-<main class="wrap">
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top">Kauã Reis <small>/ fullstack dev</small></a>
+    <nav class="links" aria-label="Navegação principal">
+      <a href="#sobre">Sobre</a>
+      <a href="#experiencia">Experiência</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#stack">Stack</a>
+      <a href="#formacao">Formação</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <button class="burger" id="burgerBtn" aria-expanded="false" aria-controls="mobileMenu" aria-label="Abrir menu">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6"><line x1="1" y1="4" x2="17" y2="4"/><line x1="1" y1="9" x2="17" y2="9"/><line x1="1" y1="14" x2="17" y2="14"/></svg>
+    </button>
+  </div>
+</header>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#sobre">Sobre</a>
+  <a href="#experiencia">Experiência</a>
+  <a href="#projetos">Projetos</a>
+  <a href="#stack">Stack</a>
+  <a href="#formacao">Formação</a>
+  <a href="#contato">Contato</a>
+</div>
+
+<main id="conteudo">
 
 <section class="hero" id="top">
-  <div>
-    <img class="photo" src="foto.jpg" alt="Foto de Kauã Antônio Reis" style="object-fit:cover;width:100%">
-    <p style="margin:18px 0 0;font-size:.8rem">Oi! Eu sou o(a)</p>
-    <h1>Kauã Reis :)</h1>
-    <p style="margin:0;font-size:.8rem;color:var(--mute)">Engenharia de Software, com experiência fullstack</p>
-  </div>
-  <div>
-    <p>Estudante de Ciência da Computação, <span class="hl">estagiário na Meep</span> e dev fullstack na <span class="hl">CODE Júnior</span>.</p>
-    <p>Estou construindo minha carreira para me tornar <span class="hl">Engenheiro de Software</span>, com experiência fullstack em <span class="hl">Java</span>, <span class="hl">.NET</span> e <span class="hl">React</span>, e construindo projetos de <span class="hl">IA</span> com a API do Claude.<br>Documento minha jornada de estudos aqui:</p>
-    <a class="card" href="#roadmap"><b>Meu roadmap de 24 semanas</b>Java · LeetCode · Arquitetura · Inglês →</a>
-    <p style="font-size:.85rem">E também no <a href="https://github.com/kauaazn">GitHub</a> e <a href="https://www.linkedin.com/in/kau%C3%A3-reis-06b99137b/">LinkedIn</a></p>
-  </div>
-</section>
-
-<section id="roadmap">
-  <h2>Meu roadmap de estudos</h2>
-  <p class="lead">O plano de 24 semanas que sigo pra me tornar Engenheiro de Software.</p>
-  <div class="rm"><iframe src="roadmap.html?embed=1" title="Roadmap de Engenharia de Software" loading="lazy"></iframe><a href="roadmap.html?embed=1" title="Abrir em tela cheia" aria-label="Abrir roadmap em tela cheia">⛶</a></div>
-</section>
-
-<section id="como-estudo">
-  <h2>Como estou estudando</h2><p class="lead">O sistema que uso toda semana.</p>
-  <div class="cards">
-    <div class="box"><h3>LeetCode</h3><p>3–5 problemas por semana, método 20 min + solução + revisão espaçada.</p></div>
-    <div class="box"><h3>Curso Java Backend (Itaú + DIO)</h3><p>Trilha de Java Backend da DIO em parceria com o Itaú.</p></div>
-    <div class="box"><h3>Inglês</h3><p>Todo tópico da semana tem uma tarefa EN: ler, falar, escrever e explicar em voz alta.</p></div>
-    <div class="box"><h3>Java POO (Udemy)</h3><p>Curso de Java com orientação a objetos na Udemy.</p></div>
-  </div>
-</section>
-
-<section id="projetos">
-  <h2>Projetos</h2><p class="lead">Código no GitHub e sites em produção.</p>
-  <div class="cards">
-    <div class="box"><h3><a href="https://github.com/kauaazn/delivery-agent">Delivery Agent</a></h3><p>Agente de IA que faz, acompanha e cancela pedidos de delivery por conversa, usando tool use da API do Claude. O modelo nunca define preço: totais e regras (um restaurante por pedido, cupons, cancelamento só antes de sair para entrega) ficam em código testado, e a confirmação do cliente é exigida em código, não só no prompt. Mais de 100 testes rodam sem chave de API. Há 12 cenários de avaliação prontos para rodar com o modelo real.</p><div class="tags"><span>Python</span><span>Claude API</span><span>Tool use</span><span>pytest</span><span>Evals</span><span>GitHub Actions</span></div></div>
-    <div class="box"><h3><a href="https://github.com/kauaazn/driver-logbook">Driver Logbook</a></h3><p>Diário de bordo de frota (fullstack). API REST para veículos, turnos e avarias, com regras de negócio (um turno ativo por vez; km final não pode ser menor que o inicial). Frontend com histórico filtrável, resumo de horas e exportação CSV.</p><div class="tags"><span>Java</span><span>Spring Boot</span><span>JPA</span><span>PostgreSQL</span><span>Next.js</span><span>Docker Compose</span></div></div>
-    <div class="box"><h3>CodeCast API</h3><p>API REST de agendamento de estúdios. CRUD de Studio, Host e Booking em camadas, detecção de conflito de horário com JPQL, datas em UTC, tratamento global de erros e Swagger UI.</p><div class="tags"><span>Java 21</span><span>Spring Boot</span><span>H2</span><span>Swagger</span></div></div>
-    <div class="box"><h3><a href="https://course-schedule-wine.vercel.app">Course Schedule</a></h3><p>Planejador de grade horária: criação e comparação de grades, calendário semanal com detecção de conflito, busca de disciplinas e exportação CSV.</p><div class="tags"><span>React</span><span>TypeScript</span><span>Vite</span></div></div>
-    <div class="box"><h3><a href="https://www.rubini-training.com.br/">Studio Rubini Training</a></h3><p>Site institucional com serviços, depoimentos e agendamento de avaliação gratuita via WhatsApp.</p><div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div></div>
-    <div class="box"><h3><a href="https://www.eunicemarquesterapeuta.com.br/">Eunice Marques Terapeuta</a></h3><p>Site institucional com especialidades, explicação do processo terapêutico, FAQ e contato via WhatsApp.</p><div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div></div>
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <p class="eyebrow">Belo Horizonte, MG</p>
+        <h1>Olá, sou Kauã Reis.</h1>
+        <p class="role">Desenvolvedor Fullstack, com foco em Backend e Engenharia de Software.</p>
+        <p class="lede">Desenvolvo sistemas web e APIs REST em produção — hoje como estagiário na <strong style="color:var(--ink)">Meep</strong> e como desenvolvedor fullstack na <strong style="color:var(--ink)">CODE Soluções em Tecnologia</strong>, com Java, Spring Boot, C#/.NET e React. Estudo Ciência da Computação e mantenho projetos próprios com foco em arquitetura, testes e boas práticas.</p>
+        <div class="availability"><span class="dot"></span> Aberto a estágio e vagas júnior em Backend / Fullstack</div>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#projetos">Ver projetos</a>
+          <a class="btn btn-ghost" href="curriculo-kaua-reis.pdf" download>Baixar currículo</a>
+        </div>
+        <div class="social-row">
+          <a href="https://github.com/kauaazn" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2.2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.4 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11 11 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A10.9 10.9 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5Z"/></svg>
+            GitHub
+          </a>
+          <a href="https://linkedin.com/in/kauareiss" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.4 20.4h-3.5v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9v5.7H9.3V9h3.4v1.6h.1c.5-.9 1.6-1.9 3.4-1.9 3.6 0 4.3 2.4 4.3 5.5v6.2ZM5.3 7.4a2 2 0 1 1 0-4 2 2 0 0 1 0 4ZM7.1 20.4H3.6V9h3.5v11.4Z"/></svg>
+            LinkedIn
+          </a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <div class="frame"><img src="foto.jpg" alt="Foto de Kauã Antônio Reis" width="400" height="400"></div>
+        <p class="loc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.4"/></svg> Belo Horizonte, MG</p>
+      </div>
+    </div>
   </div>
 </section>
 
 <section id="sobre">
-  <h2>Sobre mim</h2><p class="lead">Belo Horizonte, MG</p>
-  <div class="about">
-    <p>Estudante de Ciência da Computação (3º período, conclusão prevista para 2029), com experiência como estagiário na Meep e como desenvolvedor fullstack na empresa júnior CODE, onde implemento APIs REST em Java, Spring Boot e PostgreSQL para um cliente real.</p>
-    <p>Busco estágio ou vaga júnior em engenharia de software, backend ou fullstack. Acredito em base sólida: estruturas de dados, bancos, testes, arquitetura, e em comunicação clara, inclusive em inglês.</p>
+  <div class="wrap reveal">
+    <div class="about-grid">
+      <div>
+        <p class="eyebrow">Sobre mim</p>
+        <h2 class="title">Ciência da Computação e desenvolvimento, lado a lado</h2>
+      </div>
+      <div>
+        <p>Estou no <strong>3º período de Ciência da Computação</strong> no Centro Universitário Dom Helder Câmara, com conclusão prevista para o segundo semestre de 2029, e trabalho profissionalmente com desenvolvimento de software desde 2025.</p>
+        <p>Divido meu tempo entre dois times: na <strong>Meep</strong>, mantenho e evoluo sistemas de reservas, pagamentos e gestão de clientes; na <strong>CODE Soluções em Tecnologia</strong>, desenvolvo o backend de um sistema real de gestão de doações. Antes disso, atuei como freelancer desenvolvendo sites institucionais do levantamento de requisitos à publicação.</p>
+        <p>Tenho preferência por backend e arquitetura — entender as regras de negócio de um sistema, cobri-las com testes e manter o código legível para quem vier depois. Fora do trabalho, estudo estrutura de dados, bancos de dados e inglês técnico.</p>
+      </div>
+    </div>
   </div>
 </section>
 
 <section id="experiencia">
-  <h2>Minha experiência</h2><p class="lead">&nbsp;</p>
-  <div class="exp">
-    <h3>Meep Soluções S.A.</h3><div class="d">ESTAGIÁRIO DE DESENVOLVIMENTO DE SOFTWARE · MAR 2026 – ATUAL</div>
-    <ul>
-      <li>Desenvolvo e mantenho funcionalidades em sistemas web de reservas, filas de espera, pagamentos, relatórios e gestão de clientes, com .NET (C#) no backend, React no frontend e MySQL.</li>
-      <li>Assumi em andamento um sistema de reservas integrado a serviços de pagamento e envio de e-mails: corrigi falhas e implementei a integração de reembolso.</li>
-      <li>Uso Git e GitHub no versionamento e o Claude como ferramenta de apoio ao desenvolvimento.</li>
-    </ul>
-    <h3 style="margin-top:32px">CODE Soluções em Tecnologia Júnior</h3><div class="d">DESENVOLVEDOR FULLSTACK · OUT 2025 – ATUAL</div>
-    <ul>
-      <li>Atuo no IRR, sistema sob encomenda para um cliente de Nova Lima/MG, no backend em Java, Spring Boot e PostgreSQL. Fui alocado após aprovação no desafio técnico interno (CodeCast).</li>
-      <li>Implementei os CRUDs de doadores (PF/PJ, com validação de CPF/CNPJ) e de doações com itens aninhados, seguindo a arquitetura Port/Service/Controller do projeto, com exceções de domínio, paginação, soft delete e isolamento multi-tenant.</li>
-      <li>Trabalho em equipe horizontal, com issues, branches e pull requests com plano de teste, validando os endpoints no Postman.</li>
-    </ul>
-    <h3 style="margin-top:32px">Grupo Anchieta</h3><div class="d">ASSISTENTE ADMINISTRATIVO · FEV 2025 – MAR 2026</div>
-    <ul>
-      <li>Rotinas administrativas, controle de documentos e planilhas e análise básica de dados operacionais.</li>
-    </ul>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Experiência profissional</p>
+      <h2 class="title">Sistemas em produção, não só exercícios</h2>
+      <p>As duas experiências atuais concentram a maior parte do meu trabalho com código.</p>
+    </div>
+
+    <div class="timeline">
+      <article class="xp-card reveal">
+        <div class="head">
+          <span class="company">Meep Soluções S.A.</span>
+          <span class="role">Estagiário de Desenvolvimento de Software</span>
+          <span class="period">MAR 2026 — ATUAL</span>
+        </div>
+        <div class="tags">
+          <span class="tag">C# / .NET</span><span class="tag">Next.js</span><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">MySQL</span><span class="tag">Playwright</span>
+        </div>
+        <ul>
+          <li>Desenvolvo funcionalidades em sistemas web de reservas, filas de espera, pagamentos, relatórios e gestão de clientes, com backend em C#/.NET e frontend em Next.js, React e TypeScript.</li>
+          <li>Corrijo problemas de integração entre frontend e APIs; atuo em um sistema de reservas integrado a pagamentos e envio de e-mails, incluindo a implementação do fluxo de reembolso.</li>
+          <li>Escrevo testes end-to-end com Playwright e participo de code reviews, usando o GitHub Copilot como apoio ao desenvolvimento.</li>
+        </ul>
+      </article>
+
+      <article class="xp-card reveal">
+        <div class="head">
+          <span class="company">CODE Soluções em Tecnologia Júnior</span>
+          <span class="role">Desenvolvedor Fullstack</span>
+          <span class="period">OUT 2025 — ATUAL</span>
+        </div>
+        <div class="tags">
+          <span class="tag">Java</span><span class="tag">Spring Boot</span><span class="tag">PostgreSQL</span><span class="tag">Postman</span>
+        </div>
+        <ul>
+          <li>Desenvolvo o backend de um sistema real de gestão de doações, com CRUDs de doadores (pessoa física e jurídica) e validação de CPF/CNPJ.</li>
+          <li>Implementei doações com itens aninhados seguindo a arquitetura Port/Service/Controller do projeto, com exceções de domínio, paginação, soft delete e isolamento multi-tenant.</li>
+          <li>Trabalho em equipe com issues, branches e pull requests com plano de teste, validando os endpoints no Postman.</li>
+        </ul>
+      </article>
+    </div>
+
+    <div class="xp-minor reveal">
+      <div class="row">
+        <b>Desenvolvedor Web Freelancer</b><span class="period">HTML · CSS · JAVASCRIPT</span>
+        <p>Sites institucionais entregues ponta a ponta — do levantamento de requisitos à publicação — para Studio Rubini Training e Eunice Marques Terapeuta.</p>
+      </div>
+      <div class="row">
+        <b>Grupo Anchieta</b> · Assistente Administrativo <span class="period">FEV 2025 — MAR 2026</span>
+        <p>Rotinas administrativas, controle de documentos e planilhas, e análise básica de dados operacionais.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projetos">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Projetos</p>
+      <h2 class="title">Projetos em destaque</h2>
+      <p>Código no GitHub, testes automatizados e decisões de arquitetura documentadas em cada um.</p>
+    </div>
+
+    <figure class="proj-feature reveal">
+      <div class="pf-media">
+        <img src="img/project-driver-logbook.jpg" alt="Painel do Driver Logbook mostrando turnos, veículos e avarias, com aviso de API local desligada" loading="lazy" width="1200" height="750">
+        <figcaption>Interface real, em ambiente de demonstração local — um dos estados que ela trata explicitamente é a API fora do ar.</figcaption>
+      </div>
+      <figcaption class="pf-body">
+        <p class="ptitle">Driver Logbook</p>
+        <p class="pdesc">Diário de bordo de frota: API REST para veículos, turnos e avarias, com um frontend para acompanhar tudo isso no dia a dia.</p>
+        <p class="problem"><b>Problema:</b> controlar turnos de motoristas e quilometragem em planilhas é fácil de errar e difícil de auditar.</p>
+        <ul>
+          <li>Regra de negócio que impede mais de um turno ativo por vez e valida que a quilometragem final não seja menor que a inicial.</li>
+          <li>Testes automatizados com JUnit e integração contínua via GitHub Actions.</li>
+          <li>Histórico de turnos filtrável por veículo e data, resumo de horas e exportação em CSV.</li>
+          <li>Interface com estados de carregamento, vazio e indisponibilidade da API.</li>
+        </ul>
+        <div class="tags">
+          <span class="tag">Java</span><span class="tag">Spring Boot</span><span class="tag">Spring Data JPA</span><span class="tag">PostgreSQL</span><span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">Docker</span><span class="tag">GitHub Actions</span>
+        </div>
+        <div class="links">
+          <a class="btn btn-ghost btn-sm" href="https://github.com/kauaazn/driver-logbook" target="_blank" rel="noopener">Ver no GitHub</a>
+        </div>
+      </figcaption>
+    </figure>
+
+    <figure class="proj-feature reverse reveal">
+      <div class="pf-media">
+        <img src="img/project-codecast.jpg" alt="Documentação interativa da CodeCast API no Swagger UI, listando as rotas de studios e hosts" loading="lazy" width="1200" height="750">
+        <figcaption>Documentação interativa (Swagger UI), gerada automaticamente a partir do código.</figcaption>
+      </div>
+      <figcaption class="pf-body">
+        <p class="ptitle">CodeCast API</p>
+        <p class="pdesc">API REST para agendamento de estúdios de podcast: cadastro de estúdios, apresentadores (hosts) e reservas.</p>
+        <p class="problem"><b>Problema:</b> evitar que dois agendamentos conflitem no mesmo estúdio e horário, mesmo entre fusos diferentes.</p>
+        <ul>
+          <li>CRUD completo de Studio, Host e Booking, em arquitetura de camadas com DTOs.</li>
+          <li>Detecção de conflito de horário com JPQL e datas armazenadas em UTC com ZonedDateTime.</li>
+          <li>Tratamento global de exceções e documentação interativa com Swagger/OpenAPI.</li>
+        </ul>
+        <div class="tags">
+          <span class="tag">Java 21</span><span class="tag">Spring Boot</span><span class="tag">Spring Data JPA</span><span class="tag">H2</span><span class="tag">Lombok</span><span class="tag">Swagger/OpenAPI</span>
+        </div>
+        <div class="links">
+          <a class="btn btn-ghost btn-sm" href="https://github.com/kauaazn/codecast-api" target="_blank" rel="noopener">Ver no GitHub</a>
+        </div>
+      </figcaption>
+    </figure>
+
+    <div class="proj-grid">
+      <article class="proj-card reveal">
+        <div class="pc-media"><img src="img/project-course-schedule.jpg" alt="Tela do Course Schedule com o calendário semanal e a lista de disciplinas" loading="lazy" width="1200" height="791"></div>
+        <div class="pc-body">
+          <p class="ptitle">Course Schedule</p>
+          <p class="pdesc">Planejador de grade horária: cria e compara grades alternativas e aponta conflitos de horário antes da matrícula.</p>
+          <ul>
+            <li>Calendário semanal com detecção de conflitos e busca de disciplinas.</li>
+            <li>Exportação em CSV e persistência local com localStorage.</li>
+          </ul>
+          <div class="tags"><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Vite</span></div>
+          <div class="links">
+            <a class="btn btn-ghost btn-sm" href="https://github.com/kauaazn/course-schedule" target="_blank" rel="noopener">GitHub</a>
+            <a class="btn btn-ghost btn-sm" href="https://course-schedule-wine.vercel.app/" target="_blank" rel="noopener">Ver demo</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="proj-card reveal">
+        <div class="pc-body" style="padding-top:26px">
+          <span class="badge">Em desenvolvimento</span>
+          <p class="ptitle">Delivery Agent</p>
+          <p class="pdesc">Agente conversacional que recebe, acompanha e cancela pedidos de delivery, construído sobre tool use da API do Claude em Python.</p>
+          <p class="highlight"><b>O modelo nunca define preço:</b> totais e regras de negócio ficam em código testado, e a confirmação do cliente é exigida em código — não só no prompt.</p>
+          <div class="term" aria-hidden="true">
+            <div class="tbar"><span></span><span></span><span></span></div>
+            <div><span class="m">&gt;</span> <span class="u">cliente</span>: duas pizzas de calabresa pro centro</div>
+            <div><span class="c">tool_use</span> search_menu(query="pizza calabresa")</div>
+            <div><span class="c">tool_use</span> quote_order(items=[...])</div>
+            <div><span class="m">// confirmação exigida em código antes de</span></div>
+            <div><span class="c">tool_use</span> create_order(...)</div>
+          </div>
+          <ul>
+            <li>Mais de 100 testes automatizados que rodam sem chave de API.</li>
+            <li>12 cenários de avaliação prontos para medir o modelo real (ainda não executados).</li>
+          </ul>
+          <div class="tags"><span class="tag">Python</span><span class="tag">Claude API</span><span class="tag">Tool use</span><span class="tag">pytest</span><span class="tag">GitHub Actions</span></div>
+          <div class="links">
+            <a class="btn btn-ghost btn-sm" href="https://github.com/kauaazn/delivery-agent" target="_blank" rel="noopener">Ver no GitHub</a>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="subhead-row reveal"><h3>Projetos para clientes</h3></div>
+    <div class="proj-grid">
+      <article class="proj-card reveal">
+        <div class="pc-media"><img src="img/project-rubini.jpg" alt="Página inicial do site da Studio Rubini Training" loading="lazy" width="1200" height="800"></div>
+        <div class="pc-body">
+          <p class="ptitle">Studio Rubini Training</p>
+          <p class="pdesc">Site institucional com planos, equipe, depoimentos e agendamento de avaliação gratuita via WhatsApp.</p>
+          <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
+          <div class="links">
+            <a class="btn btn-ghost btn-sm" href="https://www.rubini-training.com.br/" target="_blank" rel="noopener">Visitar site</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="proj-card reveal">
+        <div class="pc-media"><img src="img/project-eunice.jpg" alt="Página inicial do site da Eunice Marques Terapeuta" loading="lazy" width="1200" height="800"></div>
+        <div class="pc-body">
+          <p class="ptitle">Eunice Marques Terapeuta</p>
+          <p class="pdesc">Site institucional com especialidades, explicação do processo terapêutico, FAQ e contato via WhatsApp.</p>
+          <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
+          <div class="links">
+            <a class="btn btn-ghost btn-sm" href="https://www.eunicemarquesterapeuta.com.br/" target="_blank" rel="noopener">Visitar site</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="stack">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Stack e competências</p>
+      <h2 class="title">Ferramentas que uso no dia a dia</h2>
+    </div>
+    <div class="stack-grid">
+      <div class="stack-card reveal">
+        <div class="sc-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="6" rx="1.5"/><rect x="3" y="14" width="18" height="6" rx="1.5"/><circle cx="7" cy="7" r=".6" fill="currentColor"/><circle cx="7" cy="17" r=".6" fill="currentColor"/></svg><h3>Backend</h3></div>
+        <div class="tags"><span class="tag">Java 21</span><span class="tag">Spring Boot</span><span class="tag">Spring Data JPA</span><span class="tag">APIs REST</span><span class="tag">Maven</span><span class="tag">C#</span><span class="tag">.NET</span></div>
+      </div>
+      <div class="stack-card reveal">
+        <div class="sc-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="16" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/></svg><h3>Frontend</h3></div>
+        <div class="tags"><span class="tag">React</span><span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">JavaScript</span><span class="tag">HTML</span><span class="tag">CSS</span></div>
+      </div>
+      <div class="stack-card reveal">
+        <div class="sc-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6"/><path d="M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg><h3>Banco de dados</h3></div>
+        <div class="tags"><span class="tag">PostgreSQL</span><span class="tag">MySQL</span><span class="tag">MariaDB</span><span class="tag">SQL</span></div>
+      </div>
+      <div class="stack-card reveal">
+        <div class="sc-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 18a4.5 4.5 0 0 1-1-8.9A5.5 5.5 0 0 1 16.5 7a4.5 4.5 0 0 1 1.5 8.9"/><line x1="8" y1="18" x2="16" y2="18"/></svg><h3>Cloud e DevOps</h3></div>
+        <div class="tags"><span class="tag">AWS EC2</span><span class="tag">Docker</span><span class="tag">GitHub Actions</span><span class="tag">Vercel</span></div>
+      </div>
+      <div class="stack-card reveal">
+        <div class="sc-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14.7 6.3 17.7 9.3 8.3 18.7 4.3 19.7 5.3 15.7Z"/><line x1="13" y1="8" x2="16" y2="11"/></svg><h3>Testes e ferramentas</h3></div>
+        <div class="tags"><span class="tag">JUnit</span><span class="tag">Playwright</span><span class="tag">Postman</span><span class="tag">Swagger/OpenAPI</span><span class="tag">Git</span><span class="tag">GitHub</span><span class="tag">IntelliJ IDEA</span><span class="tag">Visual Studio</span><span class="tag">VS Code</span><span class="tag">Claude Code</span><span class="tag">GitHub Copilot</span></div>
+      </div>
+    </div>
   </div>
 </section>
 
 <section id="formacao">
-  <h2>Formação e cursos</h2><p class="lead">&nbsp;</p>
-  <div class="exp">
-    <h3>Ciência da Computação</h3><div class="d">CENTRO UNIVERSITÁRIO DOM HELDER CÂMARA · 3º PERÍODO · CONCLUSÃO NO 2º SEMESTRE DE 2029</div>
-    <ul>
-      <li>AWS Academy Graduate: Cloud Foundations (AWS Training and Certification)</li>
-      <li>Java COMPLETO: Programação Orientada a Objetos + Projetos (Udemy, Nélio Alves)</li>
-      <li>Java Backend (DIO + Itaú)</li>
-      <li>Lógica de Programação (Trybe)</li>
-    </ul>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Formação</p>
+      <h2 class="title">Formação e certificações</h2>
+    </div>
+    <div class="edu-card reveal">
+      <p class="degree">Ciência da Computação</p>
+      <p class="school">Centro Universitário Dom Helder Câmara</p>
+      <p class="period">3º PERÍODO · CONCLUSÃO PREVISTA PARA O 2º SEMESTRE DE 2029</p>
+      <ul class="certs">
+        <li><b>AWS Academy Graduate</b> — Cloud Foundations</li>
+        <li><b>AWS Academy Graduate</b> — Cloud Architecting</li>
+        <li><b>Java COMPLETO:</b> Programação Orientada a Objetos + Projetos — Nélio Alves (Udemy)</li>
+        <li><b>Java Backend</b> — DIO + Itaú</li>
+      </ul>
+    </div>
   </div>
 </section>
 
-<section id="competencias">
-  <h2>Competências técnicas</h2><p class="lead">&nbsp;</p>
-  <div class="cards">
-    <div class="box"><h3>IA e Python</h3><div class="tags"><span>Python</span><span>LLMs (API do Claude)</span><span>Tool use e agentes</span><span>Evals</span><span>pytest</span><span>GitHub Actions</span></div></div>
-    <div class="box"><h3>Backend</h3><div class="tags"><span>Java 21</span><span>Spring Boot</span><span>Spring Data JPA</span><span>APIs REST</span><span>Maven</span><span>C#</span><span>.NET</span></div></div>
-    <div class="box"><h3>Frontend</h3><div class="tags"><span>React</span><span>Next.js</span><span>TypeScript</span><span>JavaScript</span><span>HTML</span><span>CSS</span></div></div>
-    <div class="box"><h3>Banco de dados</h3><div class="tags"><span>PostgreSQL</span><span>MySQL</span><span>MariaDB</span><span>SQL</span></div></div>
-    <div class="box"><h3>Ferramentas</h3><div class="tags"><span>Git</span><span>GitHub</span><span>Postman</span><span>Swagger/OpenAPI</span><span>Docker Compose (básico)</span><span>Claude Code</span><span>IntelliJ IDEA</span><span>Visual Studio</span><span>VS Code</span></div></div>
-    <div class="box"><h3>Idiomas</h3><div class="tags"><span>Português: nativo</span><span>Inglês: intermediário</span></div></div>
+<section id="contato">
+  <div class="wrap reveal">
+    <div class="contact-box">
+      <h2>Vamos conversar?</h2>
+      <p>Estou aberto a oportunidades de estágio e vagas júnior em Backend ou Fullstack.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="mailto:kaua.areis10@gmail.com">Falar por e-mail</a>
+        <a class="btn btn-ghost" href="https://linkedin.com/in/kauareiss" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+      <div class="social-row">
+        <a href="https://github.com/kauaazn" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2.2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.4 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11 11 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A10.9 10.9 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5Z"/></svg>
+          github.com/kauaazn
+        </a>
+        <a href="mailto:kaua.areis10@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>
+          kaua.areis10@gmail.com
+        </a>
+      </div>
+    </div>
   </div>
 </section>
-<section id="contato">
-  <h2>Contato</h2><p class="lead">Vamos conversar sobre estágio ou vaga júnior em engenharia de software, backend ou fullstack.</p>
-  <p><a class="card" style="display:inline-block;margin:0" href="https://www.linkedin.com/in/kau%C3%A3-reis-06b99137b/">Falar comigo no LinkedIn →</a></p>
-  <p style="font-size:.85rem">Código no <a href="https://github.com/kauaazn">GitHub</a></p>
-</section>
+
 </main>
-<footer>Criado com HTML e CSS. © Todos os direitos reservados.</footer>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 Kauã Antônio Reis.</p>
+    <p>Código aberto no <a href="https://github.com/kauaazn/portfolio" target="_blank" rel="noopener">GitHub</a>.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var burger = document.getElementById('burgerBtn');
+  var menu = document.getElementById('mobileMenu');
+  function closeMenu(){ menu.classList.remove('open'); burger.setAttribute('aria-expanded','false'); }
+  burger.addEventListener('click', function(){
+    var open = menu.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  menu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', closeMenu); });
+
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var targets = document.querySelectorAll('.reveal');
+  if (reduceMotion || !('IntersectionObserver' in window)) {
+    targets.forEach(function(el){ el.classList.add('is-visible'); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting){
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    targets.forEach(function(el){ io.observe(el); });
+  }
+})();
+</script>
 </body>
 </html>
