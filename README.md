@@ -1,15 +1,17 @@
 # Portfólio | Kauã Reis
 
-Portfólio e roadmap de estudos rumo a Engenheiro de Software, com foco em Java Backend.
+Portfólio profissional: experiência, projetos, stack e contato.
 
-**Site:** https://portfolio-eight-theta-13.vercel.app
+**Site:** https://kauaareis.vercel.app
 
 ## Conteúdo
-- `index.html`: página principal (projetos, experiência, formação e competências)
-- `roadmap.html` + `roadmap-data.js`: roadmap interativo de 24 semanas (dados editáveis em `roadmap-data.js`)
+- `index.html`: página única (hero, sobre, experiência, projetos, stack, formação e contato)
+- `img/`: screenshots reais dos projetos e sites de clientes
+- `curriculo-kaua-reis.pdf`: currículo para download
+- `favicon.svg`: ícone do site
 
 ## Tecnologias
-HTML, CSS e JavaScript puro, sem build. Hospedado na Vercel, com deploy automático a cada push na branch `main`.
+HTML, CSS e JavaScript puro, sem build. Animações de entrada via `IntersectionObserver`, respeitando `prefers-reduced-motion`. Hospedado na Vercel, com deploy automático a cada push na branch `main`.
 
 ## Contato
-[GitHub](https://github.com/kauaazn) · [LinkedIn](https://www.linkedin.com/in/kau%C3%A3-reis-06b99137b/)
+[GitHub](https://github.com/kauaazn) · [LinkedIn](https://linkedin.com/in/kauareiss)
