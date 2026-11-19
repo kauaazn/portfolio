@@ -223,6 +223,8 @@ h2.title{font-size:clamp(1.6rem,3vw,2.1rem);margin:0 0 10px;letter-spacing:-.02e
 }
 
 .proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-bottom:60px}
+.proj-grid.cols-3{grid-template-columns:repeat(3,1fr)}
+@media(max-width:900px){.proj-grid.cols-3{grid-template-columns:1fr 1fr}}
 @media(max-width:760px){.proj-grid{grid-template-columns:1fr}}
 .proj-card{border:1px solid var(--border);border-radius:var(--radius);background:var(--bg-1);overflow:hidden;display:flex;flex-direction:column}
 .proj-card .pc-media{aspect-ratio:16/10;background:var(--bg-2);position:relative;overflow:hidden}
@@ -383,12 +385,12 @@ footer a:hover{color:var(--ink-dim)}
           <span class="period">MAR 2026 — ATUAL</span>
         </div>
         <div class="tags">
-          <span class="tag">C# / .NET</span><span class="tag">Next.js</span><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">MySQL</span><span class="tag">Playwright</span>
+          <span class="tag">C# / .NET 10</span><span class="tag">Next.js</span><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">SQL Server</span><span class="tag">Playwright</span>
         </div>
         <ul>
-          <li>Desenvolvo funcionalidades em sistemas web de reservas, filas de espera, pagamentos, relatórios e gestão de clientes, com backend em C#/.NET e frontend em Next.js, React e TypeScript.</li>
-          <li>Corrijo problemas de integração entre frontend e APIs; atuo em um sistema de reservas integrado a pagamentos e envio de e-mails, incluindo a implementação do fluxo de reembolso.</li>
-          <li>Escrevo testes end-to-end com Playwright e participo de code reviews, usando o GitHub Copilot como apoio ao desenvolvimento.</li>
+          <li>Desenvolvo funcionalidades em sistemas web de reservas, filas de espera, pagamentos, relatórios e gestão de clientes, com C#/.NET 10 (Minimal API, EF Core) no backend e Next.js, React e TypeScript no frontend.</li>
+          <li>Assumi em andamento um sistema de reservas integrado a pagamentos e envio de e-mails: estabilizei o fluxo e implementei a integração de reembolso de ponta a ponta.</li>
+          <li>Escrevo testes end-to-end com Playwright para cerca de 20 telas do portal e diagnostico bugs de integração entre frontend e APIs legadas e novas.</li>
         </ul>
       </article>
 
@@ -411,8 +413,8 @@ footer a:hover{color:var(--ink-dim)}
 
     <div class="xp-minor reveal">
       <div class="row">
-        <b>Desenvolvedor Web Freelancer</b><span class="period">ATUAL</span>
-        <p>Sites institucionais entregues ponta a ponta — do levantamento de requisitos à publicação — para Studio Rubini Training e Eunice Marques Terapeuta. HTML, CSS e JavaScript.</p>
+        <b>Desenvolvedor Web Freelancer</b><span class="period">2026 — ATUAL</span>
+        <p>Sites institucionais responsivos entregues ponta a ponta — do levantamento de requisitos à configuração de domínio e hospedagem — para Rubini Training (HTML, CSS e JavaScript) e Eunice Marques Terapeuta (React).</p>
       </div>
       <div class="row">
         <b>Grupo Anchieta</b> · Assistente Administrativo <span class="period">FEV 2025 — MAR 2026</span>
@@ -435,7 +437,7 @@ footer a:hover{color:var(--ink-dim)}
         <div class="pf-media">
           <img src="img/project-driver-logbook.jpg" alt="Painel do Driver Logbook mostrando turnos, veículos e avarias, com aviso de API local desligada" loading="lazy" width="1200" height="750">
         </div>
-        <figcaption class="pf-caption">Interface real, em ambiente de demonstração local — um dos estados que ela trata explicitamente é a API fora do ar.</figcaption>
+        <figcaption class="pf-caption">Interface real — o backend ainda não está publicado, então a demo roda com a API fora do ar, um dos estados que ela trata explicitamente.</figcaption>
       </div>
       <div class="pf-body">
         <p class="ptitle">Driver Logbook</p>
@@ -452,6 +454,7 @@ footer a:hover{color:var(--ink-dim)}
         </div>
         <div class="links">
           <a class="btn btn-ghost btn-sm" href="https://github.com/kauaazn/driver-logbook" target="_blank" rel="noopener">Ver no GitHub</a>
+          <a class="btn btn-ghost btn-sm" href="https://logdriver.vercel.app/" target="_blank" rel="noopener">Ver demo</a>
         </div>
       </div>
     </figure>
@@ -481,7 +484,7 @@ footer a:hover{color:var(--ink-dim)}
       </div>
     </figure>
 
-    <div class="proj-grid">
+    <div class="proj-grid cols-3">
       <article class="proj-card reveal">
         <div class="pc-media"><img src="img/project-course-schedule.jpg" alt="Tela do Course Schedule com o calendário semanal e a lista de disciplinas" loading="lazy" width="1200" height="791"></div>
         <div class="pc-body">
@@ -523,6 +526,24 @@ footer a:hover{color:var(--ink-dim)}
           </div>
         </div>
       </article>
+
+      <article class="proj-card reveal">
+        <div class="pc-media"><img src="img/project-invest.jpg" alt="Página inicial do Invest, mostrando o resumo da carteira de investimentos" loading="lazy" width="1200" height="750"></div>
+        <div class="pc-body">
+          <span class="badge">Projeto em equipe</span>
+          <p class="ptitle">Invest</p>
+          <p class="pdesc">Plataforma de gestão de carteira de investimentos (ações, FIIs, Tesouro, CDB, cripto).</p>
+          <ul>
+            <li>Integrações com APIs de dados de investimentos.</li>
+            <li>Persistência de dados por usuário em PostgreSQL e login com Google (OAuth).</li>
+            <li>Migração do backend de aplicação de console para API REST com Javalin.</li>
+          </ul>
+          <div class="tags"><span class="tag">Java</span><span class="tag">Javalin</span><span class="tag">Maven</span><span class="tag">PostgreSQL</span><span class="tag">OAuth</span></div>
+          <div class="links">
+            <a class="btn btn-ghost btn-sm" href="https://invest.erikcaetano.com.br/" target="_blank" rel="noopener">Visitar site</a>
+          </div>
+        </div>
+      </article>
     </div>
 
     <div class="subhead-row reveal"><h3>Projetos para clientes</h3></div>
@@ -544,7 +565,7 @@ footer a:hover{color:var(--ink-dim)}
         <div class="pc-body">
           <p class="ptitle">Eunice Marques Terapeuta</p>
           <p class="pdesc">Site institucional com especialidades, explicação do processo terapêutico, FAQ e contato via WhatsApp.</p>
-          <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
+          <div class="tags"><span class="tag">React</span></div>
           <div class="links">
             <a class="btn btn-ghost btn-sm" href="https://www.eunicemarquesterapeuta.com.br/" target="_blank" rel="noopener">Visitar site</a>
           </div>
@@ -563,7 +584,7 @@ footer a:hover{color:var(--ink-dim)}
     <div class="stack-grid">
       <div class="stack-card reveal">
         <div class="sc-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="6" rx="1.5"/><rect x="3" y="14" width="18" height="6" rx="1.5"/><circle cx="7" cy="7" r=".6" fill="currentColor"/><circle cx="7" cy="17" r=".6" fill="currentColor"/></svg><h3>Backend</h3></div>
-        <div class="tags"><span class="tag">Java 21</span><span class="tag">Spring Boot</span><span class="tag">Spring Data JPA</span><span class="tag">APIs REST</span><span class="tag">Maven</span><span class="tag">C#</span><span class="tag">.NET</span></div>
+        <div class="tags"><span class="tag">C#</span><span class="tag">.NET</span><span class="tag">ASP.NET Core</span><span class="tag">Entity Framework Core</span><span class="tag">Java 21</span><span class="tag">Spring Boot</span><span class="tag">Spring Data JPA</span><span class="tag">JUnit</span><span class="tag">Maven</span><span class="tag">APIs REST</span></div>
       </div>
       <div class="stack-card reveal">
         <div class="sc-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="16" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/></svg><h3>Frontend</h3></div>
@@ -571,7 +592,7 @@ footer a:hover{color:var(--ink-dim)}
       </div>
       <div class="stack-card reveal">
         <div class="sc-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6"/><path d="M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg><h3>Banco de dados</h3></div>
-        <div class="tags"><span class="tag">PostgreSQL</span><span class="tag">MySQL</span><span class="tag">SQL</span></div>
+        <div class="tags"><span class="tag">SQL Server</span><span class="tag">PostgreSQL</span><span class="tag">MySQL</span><span class="tag">SQL</span></div>
       </div>
       <div class="stack-card reveal">
         <div class="sc-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 18a4.5 4.5 0 0 1-1-8.9A5.5 5.5 0 0 1 16.5 7a4.5 4.5 0 0 1 1.5 8.9"/><line x1="8" y1="18" x2="16" y2="18"/></svg><h3>Cloud e DevOps</h3></div>
@@ -579,7 +600,7 @@ footer a:hover{color:var(--ink-dim)}
       </div>
       <div class="stack-card reveal">
         <div class="sc-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14.7 6.3 17.7 9.3 8.3 18.7 4.3 19.7 5.3 15.7Z"/><line x1="13" y1="8" x2="16" y2="11"/></svg><h3>Testes e ferramentas</h3></div>
-        <div class="tags"><span class="tag">JUnit</span><span class="tag">Playwright</span><span class="tag">Postman</span><span class="tag">Swagger/OpenAPI</span><span class="tag">Git</span><span class="tag">GitHub</span><span class="tag">IntelliJ IDEA</span><span class="tag">Visual Studio</span><span class="tag">VS Code</span><span class="tag">Claude Code</span><span class="tag">GitHub Copilot</span><span class="tag">Codex</span></div>
+        <div class="tags"><span class="tag">Playwright</span><span class="tag">JUnit</span><span class="tag">Git</span><span class="tag">GitHub</span><span class="tag">Postman</span><span class="tag">Swagger/OpenAPI</span><span class="tag">GitHub Copilot</span><span class="tag">Claude Code</span></div>
       </div>
     </div>
   </div>
@@ -598,8 +619,6 @@ footer a:hover{color:var(--ink-dim)}
       <ul class="certs">
         <li><b>AWS Academy Graduate</b> — Cloud Foundations · <a href="https://www.credly.com/badges/2156a8d7-5fea-4fdb-b9fa-eb3f7ea33f84" target="_blank" rel="noopener" style="color:var(--accent-ink);text-decoration:underline;text-underline-offset:3px">ver badge</a></li>
         <li><b>AWS Academy Graduate</b> — Cloud Architecting · <a href="https://www.credly.com/badges/cb36a894-391d-4650-8d07-46cb394addc3/public_url" target="_blank" rel="noopener" style="color:var(--accent-ink);text-decoration:underline;text-underline-offset:3px">ver badge</a></li>
-        <li><b>Java COMPLETO:</b> Programação Orientada a Objetos + Projetos — Nélio Alves (Udemy)</li>
-        <li><b>Java Backend</b> — DIO + Itaú</li>
       </ul>
     </div>
   </div>
