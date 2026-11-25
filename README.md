@@ -1,18 +1,18 @@
-# Portfólio | Kauã Reis
+# Kauã Reis | Portfolio
 
-Portfólio profissional: Software Engineer com foco em .NET e React — experiência, projetos, stack e contato.
+Professional portfolio: Software Engineer focused on .NET and React — experience, projects, stack and contact.
 
 **Site:** https://kauaareis.vercel.app
 
-## Conteúdo
-- `index.html`: página única (hero, sobre, experiência, projetos, stack, formação e contato)
-- `img/`: screenshots reais dos projetos e sites de clientes
-- `foto.jpg`: foto de perfil, usada no hero e no `og:image`
-- `curriculo-kaua-reis.pdf`: currículo para download
-- `favicon.svg`: ícone do site
+## Contents
+- `index.html`: single-page site (hero, about, experience, projects, stack, education and contact)
+- `img/`: real screenshots of the projects and client sites
+- `foto.jpg`: profile photo, used in the hero and `og:image`
+- `curriculo-kaua-reis.pdf`: downloadable resume
+- `favicon.svg`: site icon
 
-## Tecnologias
-HTML, CSS e JavaScript puro, sem build. Animações de entrada via `IntersectionObserver`, respeitando `prefers-reduced-motion`. Hospedado na Vercel, com deploy automático a cada push na branch `main`.
+## Tech stack
+Plain HTML, CSS and JavaScript, no build step. Entry animations via `IntersectionObserver`, respecting `prefers-reduced-motion`. Hosted on Vercel, with automatic deploys on every push to `main`.
 
-## Contato
+## Contact
 [GitHub](https://github.com/kauaazn) · [LinkedIn](https://linkedin.com/in/kauareiss)
